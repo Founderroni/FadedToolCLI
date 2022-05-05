@@ -38,7 +38,7 @@ namespace FadedToolCLI
 		static void Quick(string[] args)
 		{
 			utils Util = new utils();
-			Util.SpoofIds("0458F1A8,0,20,0", "045CC590,0,30,20,60,0");
+			Util.SpoofIds("0546B0B8,0,20,0", "054C0DE0,0,30,18,10,60,0");
 			Console.WriteLine("Spoofed");
 		}
 		static void Spoof(string[] args)
@@ -114,13 +114,17 @@ namespace FadedToolCLI
 						pg.DidPtr = "0458F1A8,0,20,0";
 						pg.McidPtr = "045CC590,0,30,20,60,0";
 						break;
+					case "1.18.31":
+						pg.DidPtr = "0546B0B8,0,20,0";
+						pg.McidPtr = "054C0DE0,0,30,18,10,60,0";
+						break;
 				}
 				Util.SpoofIds(pg.DidPtr,pg.McidPtr);
 				Console.WriteLine($"Spoofed on version: {args[1]}");
 			}
 			else
 			{
-				Console.WriteLine("Invalid args. Expected format: spoof -v <game version>\nExample: spoof -v 1.18.12");
+				Console.WriteLine("Invalid args. Expected format: spoof -v <game version>\nExample: spoof -v 1.18.31");
 			}
 		}
 	}
